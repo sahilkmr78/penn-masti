@@ -1,0 +1,31 @@
+{
+    "president": {
+        "name": "Nikhil Naidu",
+        "pic": "members/NikhilNaidu.jpg",
+        "description": "Nikhil previously served as Masti's vice-president during the 2014-2015 school year, during which time he led Masti to a 2nd place finish at Penn State's Infusion and a Bollywood America bid. He was also Masti's show chair during the 2013-2014 school year."
+    },
+
+    "vicePresident": {
+        "name": "Egg Patel",
+        "pic": "members/EshaniPatel.jpg",
+        "description": "Eshani Patel, known to many as Egg Patel, previously served as one of Masti's show chairs during the 2013-2014 school year. In her free time, she likes to explore new cereals and hang out with her forest friends."
+    },
+
+    "treasurer": {
+        "name": "Michelle Nie",
+        "pic": "members/MichelleNie.jpg",
+        "description": "Michelle also served as Penn Masti's treasurer during the 2014-2015 school year."
+    },
+
+    "outreachInternal": {
+        "name": "Gagan Goopta",
+        "pic": "members/GaganGupta.jpg",
+        "description": "Gagan Goopta is Masti's internal outreach chair, dealing with on-campus performances and competitions."
+    },
+
+    "outreachExternal": {
+        "name": "RATHMAN IHM",
+        "pic": "members/RathnamV.jpg",
+        "description": "Please contact Rathman with any inquiries regarding climbing trees or picking corn. He is a pioneer in the field."
+    }
+}

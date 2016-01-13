@@ -1,0 +1,91 @@
+<br/><br/>
+<section id="portfolio">
+    <div class="container">
+        <div class="center">
+           <h2>Current Members</h2>
+           <p class="lead">The following is Penn Masti's roster for the 2015-2016 school year:</p>
+        </div>
+    
+
+        <!--<ul class="portfolio-filter text-center">
+            <li><a class="btn btn-default active" href="#" data-filter="*">All Works</a></li>
+            <li><a class="btn btn-default" href="#" data-filter=".bootstrap">Creative</a></li>
+            <li><a class="btn btn-default" href="#" data-filter=".html">Photography</a></li>
+            <li><a class="btn btn-default" href="#" data-filter=".wordpress">Web Development</a></li>
+        </ul>-->
+
+        <div class="row">
+            <div class="portfolio-items">
+
+                <div ng-repeat="member in members.currentMembers" class="portfolio-item apps col-xs-5 col-sm-2 col-md-1">
+                    <a href="#/member/{{member.id}}">
+                    <div class="recent-work-wrap">
+                        <img style="overflow: hidden; width: 100%; height: 100%" class="img-responsive" ng-src="images/members/{{member.thumb}}" alt="">
+                        <div class="overlay">
+                            <div class="recent-work-inner text-center">
+                                <h3 class="member-name-format"><span class="member-name-format">
+                                    {{member.firstName}}<br/>
+                                    <span ng-if="member.middleName">{{member.middleName}}<br/></span>
+                                    {{member.lastName}}
+                                </span></h3>
+                                <!--<p>Senior<br/>President</p>
+                                    <a class="preview" href="#/member/nikhil" rel="prettyPhoto">-->
+                                        <!--<br/><i class="fa fa-eye"></i> View Details-->
+                                        <!--</a>-->
+                            </div> 
+                        </div>
+                    </div>
+                    </a>
+                </div><!--/.portfolio-item-->
+
+
+            </div>
+        </div>
+    </div>
+</section><!--/#portfolio-item-->
+
+<br/><br/>
+<section id="portfolio">
+    <div class="container">
+        <div class="center">
+           <h2>Alumni</h2>
+           <p class="lead">The following are Penn Masti's alumni:</p>
+        </div>
+    
+
+        <!--<ul class="portfolio-filter text-center">
+            <li><a class="btn btn-default active" href="#" data-filter="*">All Works</a></li>
+            <li><a class="btn btn-default" href="#" data-filter=".bootstrap">Creative</a></li>
+            <li><a class="btn btn-default" href="#" data-filter=".html">Photography</a></li>
+            <li><a class="btn btn-default" href="#" data-filter=".wordpress">Web Development</a></li>
+        </ul>-->
+
+        <div class="row">
+            <div class="portfolio-items">
+
+                <div ng-repeat="member in members.alumni" class="portfolio-item apps col-xs-5 col-sm-2 col-md-1">
+                    <a href="#/member/{{member.id}}">
+                    <div class="recent-work-wrap">
+                        <img class="img-responsive" ng-src="images/members/{{member.thumb}}" alt="">
+                        <div class="overlay">
+                            <div class="recent-work-inner text-center">
+                                <h3>
+                                    {{member.firstName}}<br/>
+                                    <span ng-if="member.middleName">{{member.middleName}}<br/></span>
+                                    {{member.lastName}}
+                                </h3>
+                                <!--<p>Senior<br/>President</p>
+                                    <a class="preview" href="#/member/nikhil" rel="prettyPhoto">-->
+                                        <!--<br/><i class="fa fa-eye"></i> View Details-->
+                                        <!--</a>-->
+                            </div> 
+                        </div>
+                    </div>
+                    </a>
+                </div><!--/.portfolio-item-->
+
+
+            </div>
+        </div>
+    </div>
+</section><!--/#portfolio-item-->

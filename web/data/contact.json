@@ -1,0 +1,18 @@
+{
+    "column1": [
+        {"name": "Nikhil Naidu", "position": "President", "email": "nnaidu03@gmail.com"},
+        {"name": "Michelle Nie", "position": "Treasurer", "email": "mnie@wharton.upenn.edu"},
+        {"name": "Arjun Nair", "position": "Show Chair", "email": "arjunxnair@gmail.com"},
+        {"name": "Swathi Raman", "position": "Show Chair", "email": "swathi.raman09@gmail.com"},
+        {"name": "Akshat Agrawal", "position": "Marketing Chair", "email": "akshat.ag77@gmail.com"}
+    ],
+
+    "column2": [
+        {"name": "Eshani Patel", "position": "Vice President", "email": "epatel4271@gmail.com"},
+        {"name": "Gagan Gupta", "position": "Competition Chair", "email": "gagan.aj.gupta@gmail.com"},
+        {"name": "Rathnam Venkat", "position": "Outreach Chair", "email": "rathnamkvenkat@gmail.com"},
+        {"name": "Ria Desai", "position": "Costume Chair", "email": "riades@sas.upenn.edu"},
+        {"name": "Krishna Bharathala", "position": "Webmaster", "email": "kbhara@wharton.upenn.edu"}
+    ]
+}
+

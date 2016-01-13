@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Penn Masti</title>
+        
+        <!-- core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/animate.min.css" rel="stylesheet">
+        <link href="css/prettyPhoto.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link href="css/responsive.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->       
+        <link rel="shortcut icon" href="images/ico/favicon.ico">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+
+
+        <!-- ANGULAR SCRIPTS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script>
+
+        <script>
+            var app = angular.module('app', ['ngRoute']);
+
+            app.config(function($routeProvider) {
+                $routeProvider.
+                    when('/', {
+                        templateUrl: 'html/home.html',
+                        controller: 'HomeController'
+                    }).
+                    when('/about', {
+                        templateUrl: 'html/about.html',
+                        controller: 'AboutController'
+                    }).
+                    when('/members', {
+                        templateUrl: 'html/members.html',
+                        controller: 'MembersController'
+                    }).
+                    when('/member/:name', {
+                        templateUrl: 'html/current_member_bio.html',
+                        controller: 'CurrentMemberController'
+                    }).
+                    when('/media', {
+                        templateUrl: 'html/media.html',
+                        controller: 'MediaController'
+                    }).
+                    when('/contact', {
+                        templateUrl: 'html/contact.html',
+                        controller: 'ContactController'
+                    }).
+                    otherwise({
+                        redirectTo: '/'
+                    });
+            });
+
+            app.factory('dataFetcher', function($http) {
+                function getData(filename, callback) {
+                    $http({
+                        method: 'GET',
+                        url: 'data/' + filename,
+                        cache: true
+                    }).success(callback);
+                }
+
+                return {
+                    fetch: getData
+                }
+            });
+            
+            app.controller('HomeController', function ($scope, $http, $rootScope, dataFetcher) {
+                $rootScope.currentPage = 'home';
+                dataFetcher.fetch('home.json', function(home) {
+                    $scope.home = home;
+                });
+            });
+
+            app.controller('AboutController', function ($scope, $http, $rootScope, dataFetcher) {
+                $rootScope.currentPage = 'about';
+
+                dataFetcher.fetch('about.json', function(about) {
+                    $scope.about = about;
+                    var carouselLoaded = false;
+                    angular.element(document).ready(function() {
+                        if (!carouselLoaded) {
+                            $('.about-us-carousel').slick({
+                                infinite: true,
+                                slidesToShow: 1,
+                                dots: true,
+                                autoplay: true,
+                                autoplaySpeed: 5000
+                            });
+                            console.log('loaded carousel');
+                            carouselLoaded = true;
+                        }
+                    });
+                });
+
+                dataFetcher.fetch('board.json', function(about_board) {
+                    $scope.about_board = about_board;
+                });
+
+            });
+
+            app.controller('MembersController', function ($scope, $http, $rootScope, dataFetcher) {
+                $rootScope.currentPage = 'members';
+
+                dataFetcher.fetch('members.json', function(members) {
+                    $scope.members = members;
+
+                    angular.element(document).ready(function() {
+                        $('h3').responsiveHeadlines();
+                    });
+                });
+            });
+
+            app.controller('CurrentMemberController', function ($scope, $http, $routeParams, $rootScope, dataFetcher) {
+                $rootScope.currentPage = 'members';
+
+                dataFetcher.fetch('members.json', function(members) {
+                    remaining = members.currentMembers.concat(members.alumni).filter(function(member) {
+                        return member.id == $routeParams.name;
+                    });
+
+                    if (remaining.length == 0) {
+                        // 404
+                    } else {
+                        member = remaining[0];
+
+                        if (member.middleName) {
+                            $scope.name = member.firstName + ' ' + member.middleName + ' ' + member.lastName;
+                        } else {
+                            $scope.name = member.firstName + ' ' + member.lastName;
+                        }
+                        $scope.class = member.class;
+                        $scope.position = member.position;
+                        $scope.pic_url = member.pic;
+                        $scope.bio = member.bio;
+                    }
+                });
+
+            });
+
+            app.controller('ContactController', function ($scope, $http, $rootScope, dataFetcher) {
+                $rootScope.currentPage = 'contact';
+
+                dataFetcher.fetch('contact.json', function(contact) {
+                    $scope.contact = contact;
+                });
+            });
+
+            app.filter('trusted', ['$sce', function ($sce) {
+                return function (url) {
+                    return $sce.trustAsResourceUrl(url);
+                }
+            }]);
+
+            app.controller('MediaController', function ($scope, $http, $sce, $rootScope, dataFetcher) {
+                $rootScope.currentPage = 'media';
+
+                $scope.trustUrl = function(src) {
+                    return $sce.trustAsResourceUrl(src);
+                };
+
+                dataFetcher.fetch('media.json', function(media) {
+                    $scope.media = media;
+                });
+            });
+        </script>
+    </head>
+
+
+    <body class="homepage">
+        <!-- NAVBAR -->
+        <ng-include src="'html/navbar.html'" onload="true"></ng-include>
+
+        <!-- CONTENT -->
+        <div ng-view></div>
+
+        <!-- FOOTER -->
+        <ng-include src="'html/footer.html'" onload="true"></ng-include>
+
+
+        <!-- scripts -->
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.prettyPhoto.js"></script>
+        <script src="js/jquery.isotope.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script type="text/javascript" src="js/slick.min.js"></script>
+        <script type="text/javascript" src="js/jquery-responsive-headlines.min.js"></script>
+        <script type="text/javascript" src="js/jquery.ba-throttle-debounce.min.js"></script>
+    </body>
+</html>

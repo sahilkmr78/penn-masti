@@ -1,0 +1,42 @@
+{
+  "name": "penn-masti-website",
+  "version": "0.0.0",
+  "description": "The official website for Penn Masti",
+  "main": "index.js",
+  "repository": "https://ashwinb10@bitbucket.org/ashwinb10/penn-masti.git",
+  "scripts": {
+    "test": "echo 'there are no tests yet'",
+    "build": "webpack -p --config config/webpack.js --profile --colors --progress",
+    "postinstall": "webpack --config config/webpack.js",
+    "webpack": "webpack --config config/webpack.js",
+    "watch": "webpack --config config/webpack.js --watch --colors --progress"
+  },
+  "keywords": [
+    "penn-masti"
+  ],
+  "author": "Ashwin Baweja",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "babel": "^6.3.26",
+    "babel-core": "^6.4.0",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "compression-webpack-plugin": "^0.2.0",
+    "css-loader": "^0.23.1",
+    "json-loader": "^0.5.4",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "webpack": "~1.12.11"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^1.7.0",
+    "react": "~0.14.6",
+    "react-dom": "~0.14.6",
+    "react-icons": "^1.0.3",
+    "react-router": "^2.0.0-rc4",
+    "sass-flex-mixin": "^1.0.0",
+    "susy": "^2.2.10"
+  }
+}

@@ -1,0 +1,17 @@
+html, body {
+  font-family: 'Roboto';
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+// grids
+@import './_grid.scss';
+
+/** IMPORTS **/
+@import './navbar.scss';
+@import './_footer.scss';
+@import './_homePage.scss';

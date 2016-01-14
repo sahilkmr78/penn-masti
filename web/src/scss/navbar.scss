@@ -1,0 +1,98 @@
+@import "~sass-flex-mixin/flex";
+
+.navbar-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+}
+
+/** The navbar **/
+.navbar {
+  @include flexbox;
+  @include align-items(center);
+  width: 100%;
+
+  background-color: black;
+  color: white;
+  padding: 1rem 0;
+}
+
+
+/** Left side of navbar - contains logo **/
+.navbar-left {
+  @include flex(1);
+
+  @include flexbox;
+  @include align-items(center);
+}
+
+.navbar-left-link {
+  @include flexbox;
+  @include align-items(center);
+}
+
+.navbar-logo {
+  width: 4rem;
+  height: 4rem;
+  margin-left: 2rem;
+}
+
+.navbar-logo-text {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/** Right side of navbar - contains items **/
+
+.navbar-right {
+  margin-right: 2rem;
+}
+
+.navbar-item {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  margin: 0 0.5rem;
+  font-size: 0.9rem;
+  color: white;
+  font-weight: 500;
+
+  &:hover {
+    transition: 0.3s;
+
+    background-color: #c52d2f;
+    border-radius: 3px;
+  }
+}
+
+.navbar-item-active {
+  background-color: #c52d2f;
+  border-radius: 3px;
+}
+
+/** Navbar menu - show for small only **/
+.navbar-menu {
+  width: 100%;
+}
+
+.navbar-menu-item {
+  a {
+    color: white;
+  }
+  background-color: black;
+  width: 100%;
+  text-align: center;
+
+  //border: 1px solid white;
+  border-left: 0; border-right: 0;
+  padding: 0.5rem;
+}
+
+.navbar-menu-item-active {
+  background-color: #c52d2f;
+}
+
+/** Fill for fixed navbar **/
+.navbar-fill-large {
+  height: 6rem;
+}

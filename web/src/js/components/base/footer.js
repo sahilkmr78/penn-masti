@@ -1,3 +1,4 @@
+require('./footer.scss');
 import React from 'react';
 
 import FaFacebook from 'react-icons/lib/fa/facebook';

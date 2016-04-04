@@ -1,6 +1,5 @@
 @import '~sass-flex-mixin/flex.scss';
-@import "~susy";
-@import './_grid';
+@import '~scss/grid';
 
 .home-page {
   height: 800px;
@@ -47,9 +46,9 @@
     rgba(0,0,0,0.95),
     rgba(0,0,0,0.93),
     rgba(0,0,0,0.91),
-    rgba(0,0,0,0.80), 
-    rgba(0,0,0,0.65), 
-    rgba(0,0,0,0.45), 
+    rgba(0,0,0,0.80),
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.45),
     rgba(0,0,0,0));
 }
 

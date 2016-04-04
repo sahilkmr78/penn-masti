@@ -1,3 +1,4 @@
+require('./navbar.scss');
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
 
@@ -40,7 +41,7 @@ class Navbar extends React.Component {
             </div>
 
           <div className="navbar-right show-for-medium-up">
-            { navItems.map(item => 
+            { navItems.map(item =>
                 <Link to={item.path} key={item.id} className={"navbar-item" + (item.id == currentPage ? ' navbar-item-active' : '')}>
                   {item.name}
                 </Link>
@@ -52,9 +53,9 @@ class Navbar extends React.Component {
           </div>
         </div>
 
-        { this.state.openMenu ? 
+        { this.state.openMenu ?
         <div className="navbar-menu show-for-small-only">
-          { navItems.map(item => 
+          { navItems.map(item =>
               <div key={item.id} className={"navbar-menu-item" + (item.id == currentPage ? ' navbar-menu-item-active' : '')}>
                 <Link to={item.path}>
                   {item.name}

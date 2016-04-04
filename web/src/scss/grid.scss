@@ -5,7 +5,6 @@
 $breakpoint-xxs: 0;
 $breakpoint-xs: 320px;
 $breakpoint-s: 480px;
-//$breakpoint-m: 640px;
 $breakpoint-m: 720px;
 $breakpoint-l: 1000px;
 $breakpoint-xl: 1200px;
@@ -19,15 +18,3 @@ $susy: (
   global-box-sizing: border-box,
   gutter-position: split
 );
-
-.show-for-small-only {
-  @include susy-breakpoint($breakpoint-m) {
-    display: none !important;
-  }
-}
-
-.show-for-medium-up {
-  @include susy-breakpoint(max-width $breakpoint-m - 1) {
-    display: none !important;
-  }
-}

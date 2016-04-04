@@ -12,25 +12,21 @@ module.exports = {
   target: 'web',
   cache: true,
 
-  entry: {
-    'style.css': path.join(srcPath, 'scss/app.scss'),
-    'bundle.js': path.join(srcPath, 'js/app.js')
-  },
+  entry: path.join(srcPath, 'js/index.js'),
 
   output: {
     path: assetsPath,
-    filename: '[name]',
-    chunkFilename: '[id]',
+    filename: '[name].js',
+    chunkFilename: '[id].js',
     publicPath: '/'
   },
 
   module: {
     loaders: [
       {
-        test: /.+\.js$/,
+        test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel',
-        query: { presets: ['es2015', 'react'] }
+        loader: 'babel'
       },
       {
         test: /\.scss$/,
@@ -38,13 +34,12 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loaders: ['style', 'css', 'sass']
+        loaders: ['style', 'css']
       },
       {
         test: /\.woff2?$|\.woff$|\.ttf$|\.eot$|\.svg$/,
         loader: 'file'
       },
-      { test: /\.css$/, loader: 'style!css' },
       {
         test: /.*\.(png|gif|svg)$/i,
         loaders: [
@@ -57,10 +52,6 @@ module.exports = {
         loader: 'url?limit=25000'
       },
       {
-        test: /\.(woff|ttf)$/,
-        loader: 'url?limit=100000'
-      },
-      {
         test: /\.json$/,
         loader: 'json'
       }
@@ -69,9 +60,8 @@ module.exports = {
 
   resolve: {
     path: srcPath,
-    extensions: ['', '.js', '.json', '.scss', '.jsx'],
+    extensions: ['', '.js', '.json', '.scss'],
     modulesDirectories: ['node_modules', 'src', 'src/js'],
-    //modulesDirectories: ['node_modules', 'src', 'src/js', '../shared'],
     fallback: path.join(rootPath, 'node_modules/')
   },
 
@@ -82,6 +72,12 @@ module.exports = {
       excludeChunks: ['test'],
       template: 'src/index.html',
       output: 'index.html'
+    }),
+    new webpack.DefinePlugin({
+      __DEV__: JSON.stringify(process.env.NODE_ENV === "development"),
+      "process.env": {
+        "NODE_ENV": JSON.stringify(process.env.NODE_ENV || "development")
+      }
     })
   ]
 };

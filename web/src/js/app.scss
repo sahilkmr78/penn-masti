@@ -1,0 +1,23 @@
+@import "~scss/grid";
+
+html, body {
+  font-family: 'Roboto';
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.show-for-small-only {
+  @include susy-breakpoint($breakpoint-m) {
+    display: none !important;
+  }
+}
+
+.show-for-medium-up {
+  @include susy-breakpoint(max-width $breakpoint-m - 1) {
+    display: none !important;
+  }
+}

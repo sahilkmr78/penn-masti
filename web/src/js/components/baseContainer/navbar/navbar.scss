@@ -1,0 +1,114 @@
+
+.navbar {
+  position: fixed !important;
+  top: 0; left: 0;
+  width: 100%;
+}
+
+.navbar-filler {
+  height: 64px;
+}
+
+.navbar-left {
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  color: white;
+  font-weight: 500;
+}
+
+.navbar-logo {
+  height: 35px;
+  margin-right: 8px;
+}
+
+.navbar-right {
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar-right-button {
+  margin: 0 10px;
+}
+
+.navbar-right-link-active {
+  background-color: white !important;
+  .navbar-right-button-label, .navbar-expanded-menu-button-label {
+    color: black;
+  }
+}
+
+.navbar-menu-icon {
+  margin: 8px -16px 8px 0 !important;
+}
+
+/**
+ * Expanded navbar menu
+ * Necesary for small screens
+ * Animates in and out
+ */
+
+$expandedNavbarOpacity: 0.9;
+
+.navbar-expanded-menu {
+  position: fixed;
+  top: 0; right: 0;
+  width: 100%; height: 100%;
+  background-color: black;
+  z-index: 99999;
+  opacity: $expandedNavbarOpacity;
+}
+
+.navbar-expanded-menu-animate-enter {
+  opacity: 0;
+  // width: 0%; height: 0%;
+  &.navbar-expanded-menu-animate-enter-active {
+    opacity: $expandedNavbarOpacity;
+    // width: 100%; height: 100%;
+    // transition: opacity 200ms ease-in;
+    // transition: width 200ms ease-in;
+    transition: all 300ms ease-out;
+  }
+}
+
+.navbar-expanded-menu-animate-leave {
+  opacity: $expandedNavbarOpacity;
+  // width: 100%; height: 100%;
+  &.navbar-expanded-menu-animate-leave-active {
+    opacity: 0.01;
+    // width: 1%; height: 1%;
+    // transition: opacity 200ms ease-in;
+    // transition: width 200ms ease-in;
+    transition: all 300ms ease-in;
+    -webkit-transition-delay: 100ms;
+    transition-delay: 100ms;
+  }
+}
+
+.navbar-expanded-menu-close-button {
+  position: absolute !important;
+  top: 8px; right: 8px
+}
+
+.navbar-expanded-menu-close-icon {
+  color: white !important;
+  font-size: 2rem;
+}
+
+.navbar-expanded-menu-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; width: 100;
+}
+
+.navbar-expanded-menu-item {
+  width: 100%;
+}

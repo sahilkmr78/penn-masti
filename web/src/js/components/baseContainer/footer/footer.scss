@@ -1,0 +1,49 @@
+@import "~scss/constants";
+@import "~scss/grid";
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+
+  width: 100%;
+
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: center;
+}
+
+.footer-container {
+  width: 100%;
+  display: inline-block;
+  @include susy-breakpoint($breakpoint-m) {
+    width: auto;
+  }
+
+  background-color: #ccc;
+  color: white;
+  padding: 0 1rem;
+}
+
+.footer-icon {
+  fill: white;
+  margin: 0 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.footer-icon-link {
+  .footer-icon { fill: black; }
+
+  &:hover {
+    .footer-fb-icon { fill: $facebook; }
+    .footer-twitter-icon { fill: $twitter; }
+    .footer-youtube-icon { fill: $youtube; }
+    .footer-snapchat-icon { fill: $snapchat; }
+    .footer-soundcloud-icon { fill: $soundcloud; }
+    .footer-instagram-icon { fill: $instagram; }
+  }
+}
+
+.footer-filler {
+  // height: 32px;
+}

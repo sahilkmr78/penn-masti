@@ -1,2 +1,14 @@
+require('./members-page.scss');
 
-export default require('./membersPage');
+import React from 'react';
+
+export default class MembersPage extends React.Component {
+  render() {
+    return (
+        <div className="members-page">
+          <div className="members-page-container">
+          </div>
+        </div>
+    );
+  }
+}

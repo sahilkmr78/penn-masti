@@ -1,0 +1,53 @@
+/**
+ * Global SCSS File
+ * Only styles that need to be applied globally should be in this file.
+ * This file is imported and applied by the root component.
+ *
+ * All styles that are specific to a page or component should go in a SCSS/CSS file that is imported to that page/component
+ */
+
+@import "./constants";
+@import "./grid";
+
+/** defaults for html and body **/
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  background-color: transparent;
+  color: black;
+  font-weight: normal;
+  min-width: 300px;
+  height: 100%;
+  width: 100%;
+}
+
+/** for text display optimization **/
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  word-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+}
+
+// For hiding/showing elements for only various sizes
+// TODO: possibly move elsewhere
+.show-for-small-only {
+  @include susy-breakpoint($breakpoint-m) {
+    display: none !important;
+  }
+}
+.show-for-medium-up {
+  @include susy-breakpoint(max-width $breakpoint-m - 1) {
+    display: none !important;
+  }
+}
+
+#app {
+  height: 100%;
+}

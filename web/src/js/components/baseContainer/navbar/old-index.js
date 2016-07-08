@@ -9,7 +9,6 @@ import FaAlignJustify from 'react-icons/lib/fa/align-justify';
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       openMenu: false
     };
@@ -35,7 +34,7 @@ class Navbar extends React.Component {
         <div className="navbar">
             <div className="navbar-left">
               <IndexLink className="navbar-left-link" to="/">
-                <img className="navbar-logo" src="/img/masti.jpeg" />
+                <img className="navbar-logo" src={require('img/logo.jpg')} />
                 <span className="navbar-logo-text">Penn Masti</span>
               </IndexLink>
             </div>

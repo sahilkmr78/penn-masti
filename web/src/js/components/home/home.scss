@@ -1,9 +1,9 @@
 @import '~sass-flex-mixin/flex.scss';
 @import '~scss/grid';
 
-.home-page {
-  height: 800px;
-  background: url('/img/full.jpg') no-repeat center center;
+.home-bg-pic {
+  height: 100vh;
+  background: url('~img/show-2016-finale-pose.jpg') no-repeat center center;
   background-size: cover;
 
   @include flexbox;
@@ -11,24 +11,35 @@
   @include align-items(flex-start);
 }
 
-.home-text {
+.home-bg-pic-text {
+  margin-top: 64px;
   text-align: center;
   color: white;
   width: 100%;
   padding: 0 1rem;
 
   h1 {
-    font-size: 2rem;
+    margin: 1.2rem 0;
+    font-size: 1.5rem;
     @include susy-breakpoint($breakpoint-m) {
-      font-size: 3rem;
+      font-size: 2.05rem;
+    }
+    @include susy-breakpoint($breakpoint-l) {
+      font-size: 2.6rem;
     }
   }
 
   h3 {
-    font-size: 1.2rem;
+    margin: 1.2rem 0;
     font-weight: normal;
+    color: '#888';
+
+    font-size: 0.85rem;
     @include susy-breakpoint($breakpoint-m) {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+    }
+    @include susy-breakpoint($breakpoint-l) {
+      font-size: 1.3rem;
     }
   }
 
@@ -52,15 +63,18 @@
     rgba(0,0,0,0));
 }
 
-.home-about-button {
-  color: white;
-  padding: 0.5rem 0.75rem;
-  background-color: #c52d2f;
-  border-radius: 3px;
-  font-size: 0.9rem;
+.home-bg-pic-about-button {
+  // color: white;
+  // padding: 0.5rem 0.75rem;
+  // background-color: #c52d2f;
+  // border-radius: 3px;
+  // font-size: 0.9rem;
 
-  &:hover {
-    background-color: black;
-    transition: 0.3s;
-  }
+  // &:hover {
+  //   background-color: black;
+  //   transition: 0.3s;
+  // }
+
+  // position: absolute; bottom: 10%;
+  // left: 0; right: 0;
 }

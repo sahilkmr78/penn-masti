@@ -2,60 +2,45 @@
 @import "~react-image-gallery/src/image-gallery";
 
 .about-page {
-  background-color: #eee;
-}
-
-.about-page-container {
-  min-height: 100%;
   @include container;
-  padding: 2rem 0;
-  background-color: white;
-
-  @include susy-breakpoint($breakpoint-l) {
-    border: 1px solid #ccc;
-    border-top: 0;
-  }
+  padding: 1rem 1rem 2rem 1rem;
 }
 
 .about-pics-gallery {
-  padding: 0 1rem;
+  background-color: white;
+  padding: 1rem;
   @include susy-breakpoint($breakpoint-m) {
-    padding: 0 4rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
   @include susy-breakpoint($breakpoint-l) {
-    padding: 0 8rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
-}
-
-.about-pic-original {
-  img {
-    width: 100%;
-  }
-}
-
-.about-pic-thumbnail {
-  img {
-    width: 10%;
-  }
-}
-
-// overrides thumbnail background color
-.image-gallery-thumbnails {
-  background-color: transparent !important;
-}
-// overrides thumbnail display
-.image-gallery-thumbnail {
-  display: initial;
 }
 
 .about-info-para {
-  padding: 3rem 2rem;
+  margin: 2rem 0 1rem;
+
+  padding: 1rem 1.5rem;
   @include susy-breakpoint($breakpoint-l) {
-    padding: 3rem 3rem;
+    padding: 1.5rem 2rem;
   }
 }
 
+.about-info-para-title {
+  font-weight: bold;
+  margin-bottom: 1rem;
+
+  font-size: 1.3rem;
+  @include susy-breakpoint($breakpoint-m) { font-size: 1.4rem; }
+  @include susy-breakpoint($breakpoint-l) { font-size: 1.5rem; }
+}
+
 .about-info-para-text {
-  font-size: 0.9rem;
-  color: '#ddd';
+  color: #333;
+
+  font-size: 0.85rem;
+  @include susy-breakpoint($breakpoint-m) { font-size: 0.9rem; }
+  @include susy-breakpoint($breakpoint-l) { font-size: 0.95rem; }
 }

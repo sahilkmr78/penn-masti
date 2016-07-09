@@ -1,17 +1,113 @@
 @import "~scss/grid";
+@import "~scss/constants";
+@import "~sass-flex-mixin/flex";
 
 .members-page {
-  min-height: 100%;
-  background-color: #eee;
+  @include container;
+
+  @include susy-breakpoint($breakpoint-m) {
+    padding: 1rem;
+  }
+
+  margin-bottom: 2rem;
 }
 
-.members-page-container {
-  @include container;
-  padding: 2rem 0;
-  background-color: white;
-
+.members-box {
+  padding: 1rem 1.5rem;
   @include susy-breakpoint($breakpoint-l) {
-    border: 1px solid #ccc;
-    border-top: 0;
+    padding: 1.5rem 2rem;
+  }
+
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.members-box-group {
+  margin-bottom: 1rem;
+}
+
+.members-box-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  margin-bottom: 2rem;
+}
+
+.members-group-title {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.members-grid {
+  width: 100%;
+}
+
+.members-grid-member {
+  // display: inline-block;
+  // float: initial !important;
+
+}
+
+.members-grid {
+  .members-grid-link { @include span(2 of 6); }
+  & > :nth-child(3n+3) { margin-right: 0; }
+  @include susy-breakpoint($breakpoint-s) {
+    .members-grid-link { @include span(2 of 8); }
+    & > :nth-child(4n+4) { margin-right: 0; }
+  }
+  @include susy-breakpoint($breakpoint-m) {
+    .members-grid-link { @include span(2 of 10); }
+    & > :nth-child(5n+5) { margin-right: 0; }
+  }
+  @include susy-breakpoint($breakpoint-l) {
+    .members-grid-link { @include span(1 of 6); }
+    & > :nth-child(6n+6) { margin-right: 0; }
+  }
+}
+
+.members-grid-member-thumbnail {
+  width: 100%;
+  display: block;
+}
+
+.members-grid-member-info {
+  width: 100%;
+  padding: 0.5rem;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.members-grid-member-name {
+  width: 100%;
+  max-width: 100%;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  font-weight: 500;
+  font-size: 0.77rem;
+}
+
+.members-grid-member-year {
+  font-size: 0.65rem;
+  color: #555;
+}
+
+.members-grid-link {
+  display: inline-block;
+  float: initial !important;
+  margin-bottom: 1rem;
+  @include susy-breakpoint($breakpoint-m) {
+    margin-bottom: 2rem;
+  }
+}
+.members-grid-link:hover {
+  .members-grid-member-info {
+    background-color: #ddd;
+    transition: all 0.2s;
   }
 }

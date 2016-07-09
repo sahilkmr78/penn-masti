@@ -9,6 +9,7 @@ import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui/svg-icons/navigation/menu';
 import CloseIcon from 'material-ui/svg-icons/navigation/close';
 import FaClose from 'react-icons/lib/fa/close';
+import { darken } from 'material-ui/utils/colorManipulator';
 
 export default class Navbar extends React.Component {
   constructor(props) {
@@ -43,6 +44,7 @@ export default class Navbar extends React.Component {
         linkButton={true}
         containerElement={<Link to={url} activeClassName='navbar-right-link-active' />}
         labelStyle={{color: 'white'}}
+        hoverColor={darken("#fa0209", 0.4)}
       />
     );
   }
@@ -115,6 +117,7 @@ export default class Navbar extends React.Component {
                 linkButton={true}
                 containerElement={<Link to={buttonInfo.url} activeClassName='navbar-right-link-active' />}
                 labelStyle={{color: 'white'}}
+                hoverColor={darken("#fa0209", 0.4)}
               />
             </div>
           )) }

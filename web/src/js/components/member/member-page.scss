@@ -1,0 +1,139 @@
+@import "~scss/grid";
+@import "~scss/constants";
+@import "~sass-flex-mixin/flex";
+
+.member-page {
+  @include container;
+
+  padding: 1rem;
+  @include susy-breakpoint($breakpoint-l) {
+    padding: 2rem;
+  }
+  margin-bottom: 2rem;
+
+  // @include susy-breakpoint($breakpoint-s) {
+  //   .member-page-left { @include span(2 of 4); }
+  //   .member-page-right { @include span(2 at 3 of 4); }
+  // }
+  @include susy-breakpoint(550px) {
+    .member-page-left { @include span(2 of 5); }
+    .member-page-right { @include span(3 at 3 of 5); }
+  }
+  @include susy-breakpoint($breakpoint-m) {
+    .member-page-left { @include span(1 of 3); }
+    .member-page-right { @include span(2 at 2 of 3); }
+  }
+}
+
+.member-page-left {
+  max-width: 350px;
+  margin: auto;
+}
+
+// stats card (pic, name, etc)
+.member-stats-card {
+  padding: 1rem;
+}
+.member-stats-paper-pic {
+  width: 100%;
+  display: block;
+
+  .member-stats-pic {
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+  }
+}
+
+.member-stats-header {
+  margin-top: 1rem;
+  margin-bottom: 0.7rem;
+}
+.member-stats-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.member-stats-status {
+  margin-top: 0.1rem;
+  color: #666;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.member-stats-item-title {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-right: 0.3rem;
+}
+.member-stats-item-text {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #444;
+}
+
+// social media card
+.member-social-media-card {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.member-social-media-accounts {
+  & > :nth-child(3n+3) { margin-right: 0; }
+}
+.member-social-media-account {
+  @include span(1 of 3);
+  display: inline-block;
+  float: initial !important;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 0.5rem;
+
+  .member-social-media-account-icon { fill: white; }
+  &.facebook { background-color: $facebook; }
+  &.soundcloud { background-color: $soundcloud; }
+  &.instagram { background-color: $instagram; }
+  &.twitter { background-color: $twitter; }
+  &.youtube { background-color: $youtube; }
+  &.snapchat { svg { fill: #bbb; } background-color: $snapchat; }
+  &:hover {
+    box-shadow:inset 0 0 0 99999px rgba(0,0,0,0.3);
+    border-color: #ddd;
+  }
+  border: 1px solid transparent;
+  box-sizing: border-box;
+
+  text-align: center;
+}
+.member-social-media-icon-button {
+  font-size: 1rem !important;
+  .facebook { fill: $facebook; }
+  .soundcloud { fill: $soundcloud; }
+}
+
+// pic card
+.member-pic-card {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+// bio card
+.member-bio-card {
+  padding: 1rem;
+}
+.member-bio-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  margin-bottom: 1rem;
+}
+.member-bio-text {
+  font-size: 0.85rem;
+  line-height: 1.1rem;
+}

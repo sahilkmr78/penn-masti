@@ -1,0 +1,110 @@
+@import "~scss/grid";
+@import "~scss/constants";
+@import "~sass-flex-mixin/flex";
+
+.contact-page {
+  padding: 1rem;
+  @include susy-breakpoint($breakpoint-l) {
+    padding: 2rem;
+  }
+  margin-bottom: 2rem;
+
+  @include container;
+}
+
+.contact-title-card {
+  padding: 1rem;
+}
+.contact-title {
+  font-size: 1.35rem;
+  @include susy-breakpoint($breakpoint-m) {
+    font-size: 1.75rem;
+  }
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+.contact-description {
+  font-size: 0.75rem;
+  @include susy-breakpoint($breakpoint-m) {
+    font-size: 0.9rem;
+  }
+  color: #444;
+}
+.contact-link {
+  font-weight: 500;
+  color: $primaryRed;
+  &:hover { color: black; transition: all 0.2s; }
+}
+
+.contact-list-card {
+  background: url('./map.jpg');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  margin-top: 2rem;
+  padding: 1rem;
+
+  @include flexbox;
+  @include flex-direction(column);
+  @include align-items(stretch);
+  @include susy-breakpoint($breakpoint-l) {
+    @include flex-direction(row);
+    @include align-items(center);
+    .contact-list-card-map { @include flex(1); }
+    .contact-list-card-contacts { @include flex(2); }
+  }
+}
+
+.contact-list-card-map-paper {
+  padding: 0.5rem;
+}
+.contact-philly-map {
+  width: 100%;
+  display: block;
+}
+
+.contact-list-card-contacts {
+  display: inline-block;
+  margin: auto;
+  margin-top: 2rem;
+  width: 100%;
+  @include susy-breakpoint($breakpoint-m) {
+    width: 75%;
+  }
+  @include susy-breakpoint($breakpoint-l) {
+    margin-top: 0;
+    margin-left: 4rem;
+    width: 100%;
+  }
+}
+
+@include susy-breakpoint(550px) {
+  .contact-list-column-left { @include span(2 of 4); }
+  .contact-list-column-right { @include span(2 at 3 of 4); }
+}
+
+.contact-info-card {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+.contact-info-card-title {
+  font-size: 0.75rem;
+  @include susy-breakpoint($breakpoint-m) {
+    font-size: 0.8rem;
+  }
+  @include susy-breakpoint($breakpoint-l) {
+    font-size: 0.9rem;
+  }
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+.contact-info-card-email {
+  font-size: 0.7rem;
+  @include susy-breakpoint($breakpoint-m) {
+    font-size: 0.75rem;
+  }
+  @include susy-breakpoint($breakpoint-l) {
+    font-size: 0.85rem;
+  }
+}

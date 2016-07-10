@@ -23,9 +23,11 @@ export default class MembersPage extends React.Component {
             members.map(member => {
               const name = `${member.firstName} ${member.middleName || ''} ${member.lastName}`;
               return (
-                <Link to={`/member/${member.id}`} className='members-grid-link'>
+                <Link to={`/member/${member.id}`} className='members-grid-link' key={member.id}>
                   <Card className='members-grid-member' key={member.id}>
-                    <img src={member.thumb} className='members-grid-member-thumbnail' />
+                    <div className='members-grid-member-thumbnail-container'>
+                      <img src={member.thumb} className='members-grid-member-thumbnail' />
+                    </div>
 
                     <div className='members-grid-member-info'>
                       <div className='members-grid-member-name'>{name}</div>

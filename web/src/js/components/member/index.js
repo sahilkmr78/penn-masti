@@ -11,6 +11,7 @@ import FaYoutube from 'react-icons/lib/fa/youtube-play';
 import FaInstagram from 'react-icons/lib/fa/instagram';
 import FaSoundcloud from 'react-icons/lib/fa/soundcloud';
 import FaSnapchat from 'react-icons/lib/fa/snapchat-ghost';
+import FaEnvelope from 'react-icons/lib/fa/envelope';
 
 import membersList from '../shared/members-list';
 
@@ -21,6 +22,7 @@ const SOCIAL_ACCOUNTS = {
   twitter: { name: 'twitter', baseUrl: 'https://www.twitter.com/', icon: FaTwitter },
   snapchat: { name: 'snapchat', baseUrl: 'https://www.snapchat.com/add/', icon: FaSnapchat },
   youtube: { name: 'youtube', baseUrl: 'https://www.youtube.com/user/', icon: FaYoutube },
+  email: { name: 'email', baseUrl: 'mailto:', icon: FaEnvelope },
 };
 
 export default class MemberPage extends React.Component {
@@ -105,6 +107,7 @@ export default class MemberPage extends React.Component {
           { this._getSocialMediaIconButton(SOCIAL_ACCOUNTS.youtube, accounts.youtube) }
           { this._getSocialMediaIconButton(SOCIAL_ACCOUNTS.twitter, accounts.twitter) }
           { this._getSocialMediaIconButton(SOCIAL_ACCOUNTS.snapchat, accounts.snapchat) }
+          { this._getSocialMediaIconButton(SOCIAL_ACCOUNTS.email, accounts.email) }
         </div>
       </Card>
     );

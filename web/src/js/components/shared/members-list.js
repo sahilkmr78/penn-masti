@@ -186,7 +186,8 @@ export default {
               "instagram": "nnaidu03",
               "youtube": "RianKobe",
               "snapchat": "nnaidu",
-              "twitter": "penndhamaka"
+              "twitter": "penndhamaka",
+              "email": "nnaidu03@gmail.com"
             },
             "bio": "Otherwise known as the “brown mamba,” Nikhil has been recruited to play for several NBA basketball teams. Rejecting many offers, Nikhil instead decided to take his talents to West Philly to join Penn Masti. A true baller at heart, Nikhil brings passion and commitment to the team. Despite his phenomenal skill set, he is one of the nicest and most humble people you can meet. You can find him on the court at Pottruck taking care of scrubs, doing nursing homework at the booths, or birding across Locust Walk trying (and succeeding) to get some ladies. Wherever you find him, you’ll see that he’s the man."
         },

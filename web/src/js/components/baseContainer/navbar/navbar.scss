@@ -3,6 +3,10 @@
   position: fixed !important;
   top: 0; left: 0;
   width: 100%;
+
+  // min width of app
+  // doesn't automatically applied to 'position:fixed' elements
+  min-width: 300px;
 }
 
 .navbar-filler {

@@ -49,7 +49,7 @@ module.exports = {
       },
       {
         test: /\.(jpg)$/,
-        loader: 'url?limit=25000'
+        loader: 'url?limit=1024'
       },
       {
         test: /\.json$/,

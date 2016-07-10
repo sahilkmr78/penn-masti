@@ -48,6 +48,7 @@
     "react-dom": "^15.2.0",
     "react-icons": "^2.2.0",
     "react-image-gallery": "^0.6.4",
+    "react-infinite-scroll": "^0.1.5",
     "react-router": "^2.5.2",
     "react-router-scroll": "^0.2.0",
     "sass-flex-mixin": "^1.0.0",

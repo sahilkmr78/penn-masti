@@ -1,0 +1,80 @@
+@import "~scss/grid";
+
+.media-page {
+  padding: 1rem;
+  @include susy-breakpoint($breakpoint-m) {
+    padding: 2rem;
+  }
+
+  margin-bottom: 1rem;
+}
+
+.media-tabs-card {
+  position: fixed;
+  top: 64px; left: 0; right: 0;
+
+  // min width of app
+  // doesn't automatically applied to 'position:fixed' elements
+  min-width: 300px;
+
+  background-color: #fafafa !important;
+}
+.media-tabs {
+  @include container;
+  background-color: transparent;
+  color: black !important;
+}
+.media-tabs-filler {
+  height: 48px;
+}
+
+.media-tabs-tab {
+  color: black !important;
+
+  font-size: 0.7rem !important;
+  @include susy-breakpoint($breakpoint-m) {
+    font-size: 0.875rem !important;
+  }
+}
+
+.media-item-list {
+  @include container(800px);
+}
+
+.media-item-card {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  // padding: 1.5rem;
+  // @include susy-breakpoint($breakpoint-m) {
+  //   padding: 2rem;
+  // }
+}
+.media-item-title {
+  margin-bottom: 2rem;
+
+  font-weight: bold;
+
+  font-size: 1.2rem;
+  @include susy-breakpoint($breakpoint-m) {
+    font-size: 1.5rem;
+  }
+}
+
+.media-item-iframe-container {
+  display: block;
+  position: relative;
+  padding-top: 56.25%;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.media-item-iframe {
+  border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}

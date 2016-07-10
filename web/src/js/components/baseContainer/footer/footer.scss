@@ -28,10 +28,11 @@
 .footer-icon {
   fill: white;
   margin: 0 0.5rem;
-  padding: 0.5rem 0;
 }
 
 .footer-icon-link {
+  display: inline-block !important;
+  padding: 0.5rem 0;
   .footer-icon { fill: black; }
 
   &:hover {

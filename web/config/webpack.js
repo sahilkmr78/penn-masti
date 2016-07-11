@@ -74,7 +74,13 @@ module.exports = {
       inject: true,
       excludeChunks: ['test'],
       template: 'src/index.html',
-      output: 'index.html'
+      filename: 'index.html'
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      excludeChunks: ['test'],
+      template: 'src/index.html',
+      filename: '404.html'
     }),
     new webpack.DefinePlugin({
       __DEV__: JSON.stringify(process.env.NODE_ENV === "development"),

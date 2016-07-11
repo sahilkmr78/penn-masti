@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-import routes from './routes';
+import routes from './split_routes';
 
 class App extends React.Component {
   render() {

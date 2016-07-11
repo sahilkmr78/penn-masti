@@ -1,5 +1,6 @@
 require('./footer.scss');
 import React from 'react';
+import Card from 'material-ui/Card';
 
 import FaFacebook from 'react-icons/lib/fa/facebook';
 import FaTwitter from 'react-icons/lib/fa/twitter';
@@ -41,9 +42,9 @@ class Footer extends React.Component {
     return (
       <div>
         <div className="footer">
-          <div className="footer-container">
+          <Card className="footer-container">
             { this.accounts.map(account => this._getIcon(account.url, account.icon, account.className)) }
-          </div>
+          </Card>
         </div>
 
         { this._getFiller() }

@@ -12,7 +12,10 @@ module.exports = {
   target: 'web',
   cache: true,
 
-  entry: path.join(srcPath, 'js/index.js'),
+  entry: {
+    app: path.join(srcPath, 'js/index.js'),
+    vendor: ['react', 'react-dom', 'react-router', 'react-addons-css-transition-group', 'react-tap-event-plugin']
+  },
 
   output: {
     path: assetsPath,
@@ -66,7 +69,7 @@ module.exports = {
   },
 
   plugins: [
-    //new webpack.optimize.CommonsChunkPlugin('js/common.js'),
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
     new HtmlWebpackPlugin({
       inject: true,
       excludeChunks: ['test'],

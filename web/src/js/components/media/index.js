@@ -47,10 +47,8 @@ export default class MediaPage extends React.Component {
   }
 
   _loadMoreItems() {
-    console.log('load more');
     const mediaItems = this._getMediaList();
     if (!this._hasMoreItems(mediaItems)) return;
-    console.log('is loading more');
 
     this.setState({ numItemsShown: this.state.numItemsShown + 1 });
   }

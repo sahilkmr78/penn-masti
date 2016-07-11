@@ -116,7 +116,6 @@ export default class MemberPage extends React.Component {
   render() {
     const memberId = this.props.routeParams.memberId;
     const member = this._getMember(memberId);
-    console.log(member);
     if (!member) {
       return (
         <div className='member-page-not-found'>

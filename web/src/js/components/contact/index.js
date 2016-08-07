@@ -38,16 +38,16 @@ export default class ContactPage extends React.Component {
 
             <div className='contact-list-card-contacts'>
               <div className='contact-list-column-left'>
-                { this._getContactInfoCard('Nikhil Naidu', 'President', 'nnaidu03@gmail.com') }
-                { this._getContactInfoCard('Michelle Nie', 'Treasurer', 'mnie@wharton.upenn.edu') }
-                { this._getContactInfoCard('Arjun Nair', 'Show Chair', 'arjunxnair@gmail.com') }
-                { this._getContactInfoCard('Swathi Raman', 'Show Chair', 'swathi.raman09@gmail.com') }
-                { this._getContactInfoCard('Akshat Agrawal', 'Marketing Chair', 'akshat.ag77@gmail.com') }
+                { this._getContactInfoCard('Gagan Gupta', 'President', 'nnaidu03@gmail.com') }
+                { this._getContactInfoCard('Rathnam Venkat', 'Treasurer', 'mnie@wharton.upenn.edu') }
+                { this._getContactInfoCard('Sahil Kumar', 'Show Chair', 'arjunxnair@gmail.com') }
+                { this._getContactInfoCard('Anushka Makhija', 'Show Chair', 'swathi.raman09@gmail.com') }
+                { this._getContactInfoCard('Anjali Mahadevia', 'Marketing Chair', 'akshat.ag77@gmail.com') }
               </div>
               <div className='contact-list-column-right'>
-                { this._getContactInfoCard('Eshani Patel', 'Vice-President', 'eptal4271@gmail.com') }
-                { this._getContactInfoCard('Gagan Gupta', 'Competition Chair', 'gagan.aj.gupta@gmail.com') }
-                { this._getContactInfoCard('Rathnam Venkat', 'Outreach Chair', 'rathnamkvenkat@gmail.com') }
+                { this._getContactInfoCard('Arjun Nair', 'Vice-President', 'eptal4271@gmail.com') }
+                { this._getContactInfoCard('Hemanth Chittela', 'Competition Chair', 'gagan.aj.gupta@gmail.com') }
+                { this._getContactInfoCard('Nihar Sheth', 'Outreach Chair', 'rathnamkvenkat@gmail.com') }
                 { this._getContactInfoCard('Ria Desai', 'Costume Chair', 'riades@sas.upenn.edu') }
                 { this._getContactInfoCard('Ashwin Baweja', 'Webmaster', 'ashwinb10@gmail.com') }
               </div>

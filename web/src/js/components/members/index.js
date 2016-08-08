@@ -26,7 +26,7 @@ export default class MembersPage extends React.Component {
                 <Link to={`/member/${member.id}`} className='members-grid-link' key={member.id}>
                   <Card className='members-grid-member' key={member.id}>
                     <div className='members-grid-member-thumbnail-container'>
-                      <img src={member.thumb} className='members-grid-member-thumbnail' />
+                      <img src={require(member.thumb)} className='members-grid-member-thumbnail' />
                     </div>
 
                     <div className='members-grid-member-info'>
